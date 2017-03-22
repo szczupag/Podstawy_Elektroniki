@@ -334,6 +334,92 @@ Pomiar: $1673,81 \text{ }\Omega$
 \end{center}
 \subsubsection{Wnioski}
 Błąd pomiarowy
+\section{Zadanie C}
+\subsection{Część I}
+\subsection{Część II}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+  (0,0) to (0,2)
+  (0,2.5) circle (0.5cm)
+  (0,3) to (0,5)
+  (0,0) to (5,0)
+  (5,0) to (5,1)
+  (5,2) to (5,2.5)
+  (5,2.5) to (2.5,2.5)
+  (0,5) to (2.5,5)
+  (2.5,5) to [R, l=$R_1$](2.5,2.5)
+  (2.5,2.5) to [R, l=$R_2$](2.5,0)
+  node[below] at(0,3){+}
+  node[above] at(0,2){-}
+  node[below]at(5,1.75){$U_{out}$}
+  node[right] at (0.6,2.5){$U_{in}$}
+  ;
+  \end{circuitikz}
+\end{center}
+\subsection{Część III}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+  (0,0) to (0,0.5)
+  (0,1) circle (0.5cm)
+  (0,1.5) to (0,2)
+  (0,0) to (3,0)
+  (3,0) to (3,2)
+  (0,2) to [R, l=$R_1 \ 2100$](3,2)
+  node[below] at(0,1.5){+}
+  node[above] at(0,0.5){-}
+  node[right] at(0.5,1.5){$V_1$}
+  node[right] at(0.5,0.5){$5V$}
 
+  ;
+  \end{circuitikz}
+\end{center}
+\subsection{Część IV}
+\subsubsection{Obwód 1}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+  (0,0) to (4,0)
+  (4,0) to (4,2)
+  (4,2) to [R, l=$R_3 \ 200$](0,2)
+  (4,2) to [R, l=$R_4 \ 1k$](4,4)
+  (4,4) to (2.5,4)
+  (2,4) circle (0.5cm)
+  (0,4) to (1.5,4)
+  (0,0) to [R, l=$R_2 \ 2k$](0,2)
+  (0,2) to [R, l=$R_1 \ 100$](0,4)
+  node[right]at(1.5,4){-}
+  node[left]at(2.5,4){+}
+  node[above]at(2,4.5){$V_1$}
+  node[above]at(2.5,4.5){$5V$}
+  ;
+  \end{circuitikz}
+\end{center}
+\subsubsection{Obwód 2}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+	(0,0) to (7,0)
+ 	(2,0) to[R, l=$R_1 \ 2k$]  (2,2)
+   (0,2) to (2,2)
+   (2,2) to (3,2)
+   (3,2) to (3,4)
+   (3,2) to[R, l=$R_3 \ 2k$] (5,2)
+   (3,4) to[R, l=$R_4 \ 1k$] (5,4)
+   (5,4) to (5,2)
+   (5,2) to (6,2)
+   (6,2) to[R, l=$R_2 \ 2k$] (6,0)
+   (6,2) to (7,2)
+   (0,0) to (0,0.5)
+   (0,1) circle (0.5cm)
+   (0,1.5) to (0,2)
+   node[above] at(0,0.5){-}
+   node[below] at(0,1.5){+}
+   node[left] at(-0.6,0.5){$5V$}
+   node[left] at(-0.6,1){$V_1$}
+  ;
+\end{circuitikz}
+\end{center}
 
 \end{document}
