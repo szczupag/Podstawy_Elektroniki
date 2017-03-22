@@ -1,0 +1,339 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[cp1250,utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{pslatex}
+\usepackage{pgfplots}
+\usepackage{circuitikz}
+%\usetikzlibrary{circuits.ee.IEC}
+\usepackage{anysize}
+\usepackage{amsmath}
+\pgfplotsset{compat=1.14}
+\newcommand{\PRzFieldDsc}[1]{\sffamily\bfseries\scriptsize #1}
+\newcommand{\PRzFieldCnt}[1]{\textit{#1}}
+\newcommand{\PRzHeading}[8]{
+\begin{center}
+\begin{tabular}{ p{0.32\textwidth} p{0.15\textwidth} p{0.15\textwidth} p{0.12\textwidth} p{0.12\textwidth} }
+
+  &   &   &   &   \\
+\hline
+\multicolumn{5}{|c|}{}\\[-1ex]
+\multicolumn{5}{|c|}{{\LARGE #1}}\\
+\multicolumn{5}{|c|}{}\\[-1ex]
+
+\hline
+\multicolumn{1}{|l|}{\PRzFieldDsc{Kierunek}}	& \multicolumn{1}{|l|}{\PRzFieldDsc{Specjalność}}	& \multicolumn{1}{|l|}{\PRzFieldDsc{Rok studiów}}	& \multicolumn{2}{|l|}{\PRzFieldDsc{Symbol grupy lab.}} \\
+\multicolumn{1}{|c|}{\PRzFieldCnt{#2}}		& \multicolumn{1}{|c|}{\PRzFieldCnt{#3}}		& \multicolumn{1}{|c|}{\PRzFieldCnt{#4}}		& \multicolumn{2}{|c|}{\PRzFieldCnt{#5}} \\
+
+\hline
+\multicolumn{4}{|l|}{\PRzFieldDsc{Temat Laboratorium}}		& \multicolumn{1}{|l|}{\PRzFieldDsc{Numer lab.}} \\
+\multicolumn{4}{|c|}{\PRzFieldCnt{#6}}				& \multicolumn{1}{|c|}{\PRzFieldCnt{#7}} \\
+
+\hline
+\multicolumn{5}{|l|}{\PRzFieldDsc{Skład grupy ćwiczeniowej oraz numery indeksów}}\\
+\multicolumn{5}{|c|}{\PRzFieldCnt{#8}}\\
+
+\hline
+\multicolumn{3}{|l|}{\PRzFieldDsc{Uwagi}}	& \multicolumn{2}{|l|}{\PRzFieldDsc{Ocena}} \\
+\multicolumn{3}{|c|}{\PRzFieldCnt{\ }}		& \multicolumn{2}{|c|}{\PRzFieldCnt{\ }} \\
+
+\hline
+\end{tabular}
+\end{center}
+}
+\begin{document}
+\PRzHeading{Laboratorium Podstaw Elektroniki}{Informatyka}{--}{I}{I1}{Laboratoria wprowadzające}{1}{Maciej Mościcki(132290), Bartłomiej Szal(132322), Agata Szczuka(132324), Adrian Wojtczak(132343)}{}
+\section{Zadanie A}
+\subsection{Część I}
+\subsubsection{Cele}
+Celem doświadczenia było porównanie odczytanej wartości rezystancji oporników z ich rezystencją zmierzoną za pomocą multimetru RIGOL DS1022. \\
+\subsubsection{Pomiary}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+R & Barwy & Odczyt & Pomiar & R & Barwy & Odczyt & Pomiar \\
+\hline
+R1 & \begin{tabular}{@{}c@{}}Pomarańczowy\\ Pomarańczowy \\
+Czerwony\\ Złoty
+\end{tabular} & \begin{tabular}{@{}c@{}}Rezystancja 33 \\ Mnożnik 100 \\ Tolerancja 5\% \end{tabular} & 3,27k\Omega & R4 & \begin{tabular}{@{}c@{}}Czerwony \\ Czarny \\Czerwony \\ Złoty\end{tabular} & \begin{tabular}{@{}c@{}}Rezystancja 20 \\ Mnożnik 100 \\ Tolerancja 5\%\end{tabular} & 1,95k\Omega \\
+\hline
+R2 & \begin{tabular}{@{}c@{}}Żółty \\ Fioletowy \\ Brązowy \\ Złoty \end{tabular} & \begin{tabular}{@{}c@{}}Rezystancja 47 \\ Mnożnik 10 \\ Tolerancja 5\% \end{tabular} & 0,46k\Omega & R5 & \begin{tabular}{@{}c@{}}Brązowy \\Czarny \\Czerwony\\Złoty \end{tabular} & \begin{tabular}{@{}c@{}}Rezystancja 10 \\ Mnożnik 100 \\ Tolerancja 5\% \end{tabular} & 0,98k\Omega \\
+\hline
+R3 & \begin{tabular}{@{}c@{}}Czewony \\ Czerwony \\ Brązowy \\ Złoty \end{tabular} & \begin{tabular}{@{}c@{}}Rezystancja 22 \\ Mnożnik 10 \\ Tolerancja 5\% \end{tabular} & 214,5\Omega & R6 & \begin{tabular}{@{}c@{}}- \\- \\-\\- \end{tabular} & \begin{tabular}{@{}c@{}} - \\ -\\ - \end{tabular} & 10,18\Omega \\
+\hline
+\end{tabular}
+\\
+\subsubsection{Wnioski}
+Różnice pomiędzy wartością odczytaną a zmierzoną wynikają z tolerancji oporników - możliwej odchyłki wartości rzeczywistej od wartości nominalnej. Jednocześnie pomiary obarczone są błędem pomiarowym.\\
+\subsection{Część II}
+\subsubsection{Cele}
+Celem doświadcznie było porównanie odczytanej pojemności kondensatorów na podstawie ich znaczeń z pomiarem pojemności dokonanym przy pomocy mostka pomiarowego.\\
+\subsubsection{Pomiary}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+C & Oznaczenie & Odczyt & Pomiar & C & Oznaczenie & Odczyt & Pomiar \\
+\hline
+C1 & 47\mu F & 47\mu F & 45,8\mu F & C2 & 1\mu F & 1\mu F & 0,88\mu F \\
+\hline
+C2 & 10nF & 10nF & 8,16nF & C4 & 2,2\mu F & 2,2 \mu F& 1,94 \mu F\\
+\hline
+C5 & 100 \mu F &  100 \mu F & 96,4 \mu F & C6 & 3,3 nF & 3,3nF & 3,46nF \\
+\hline
+\end{tabular}
+
+\\
+\subsubsection{Wnioski}
+Różnice między wartością pojemności  odczytaną a zmierzoną wynikają z tego, że pomiary obarczone są błędem pomiarowym.\\
+\subsection{Część III}
+\subsubsection{Cele}
+Celem doświadczenia było zmierzenie indukcyjności wybranych cewewk przy pomocy mostka pomiarowego.\\
+\subsubsection{Pomiary}
+\begin{tabular}{|c|c|}
+\hline
+L & Pomiar \\
+\hline
+L1 & 40,6 nH \\
+\hline
+L2 &29,4 nH \\
+\hline
+L3 & 31,2 nH \\
+\hline
+\end{tabular}
+
+\section{Zadanie B}
+\subsection{Część I}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+(0,3) to (0,0)
+(0,3) to[R, l=$R_7 \ 1k$](2,3)
+(2,3) to (2,3.5)
+(2,3) to (2,2)
+(2,3.5) to[R, l=$R_5 \ 100$](4,3.5)
+(2,2) to[R, l=$R_6 \ 200$](4,2)
+(4,3.5) to (4,3)
+(4,2) to (4,3)
+(4,3) to (4.2,3)
+(4.2,3) to (4.2,7)
+(4.2,3) to (4.2,2)
+(4.2,7) to [R, l=$R_1 \ 2k$](6.2,7)
+(4.2,5.5) to [R, l=$R_2 \ 3k$](6.2,5.5)
+(4.2,4) to [R, l=$R_3 \ 1k$](6.2,4)
+(4.2,2) to [R, l=$R_4 \ 270$](6.2,2)
+(6.2,3) to (6.5,3)
+(6.2,7) to (6.2,2)
+(6.5,2.5) to (6.5,4)
+(6.5,4) to [R, l=$R_8 \ 1$](8.5,4)
+(6.5,2.5) to [R, l=$R_9 \ 100$](8.5,2.5)
+(8.5,2.5) to (8.5, 4)
+(8.5,3) to (9,3)
+(9,3) to (9,0)
+(0,0) to (4,0)
+node[above] at(4,0){A}
+(9,0) to (5,0)
+node[above] at(5,0){B}
+  ;
+\end{circuitikz}
+\end{center}
+\setcounter{equation}{0}
+\begin{align}
+\frac{1}{R_{a}}= \frac{1}{R_{5}} + \frac{1}{R_{6}}
+\hspace{1cm}
+R_{a}=\frac{R_{5}*R_{6}}{R_{5}+R_{6}}
+\\
+\frac{1}{R_{b}}= \frac{1}{R_{1}} + \frac{1}{R_{2}} + \frac{1}{R_{3}} + \frac{1}{R_{4}}
+\hspace{1.5cm}
+R_{b}=\frac{R_{1}*R_{2}*R_{3}*R_{4}}{R_{2}*R_{3}*R_{4}+R_{1}*R_{3}*R_{4}+R_{1}*R_{2}*R_{4}+R_{1}*R_{2}*R_{3}}
+\\
+\frac{1}{R_{c}}= \frac{1}{R_{8}} + \frac{1}{R_{9}}
+\hspace{1.5cm}
+R_{c}=\frac{R_{8}*R_{9}}{R_{8}+R_{9}}
+\\
+R_{z}=R_{7}+R_{a}+R_{b}+R_{c}
+\\
+R_{z}=R_{7}+\frac{R_{5}*R_{6}}{R_{5}+R_{6}}+\frac{R_{1}*R_{2}*R_{3}*R_{4}}{R_{2}*R_{3}*R_{4}+R_{1}*R_{3}*R_{4}+R_{1}*R_{2}*R_{4}+R_{1}*R_{2}*R_{3}}+\frac{R_{8}*R_{9}}{R_{8}+R_{9}}
+\\
+R_{z}=1248,27\Omega
+\end{align}
+
+\subsection{Część II}
+\subsubsection{Cele}
+Cele cele
+\subsubsection{Obwód 2}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+(6.3,0) to (6.1,0)
+(6.3,1) to (6.3,0)
+(6,1) to (7,1)
+(5,1) to[R, l=$R_4 \ 100$] (6,1)
+(7,3) to[R, l=$R_5 \ 100$] (7,1)
+(4,3) to[R, l=$R_3 \ 1k$] (7,3)
+(2,3) to (4,3)
+(2,1)to[R, l=$R_1 \ 1k$](2,3)
+(2,1) to(4,1)
+(4,1) to[R, l=$R_2\ 2k$] (4,3)
+(4,1) to (5,1)
+(4.6,0) to (4.6,1)
+(4.6,0) to (4.8,0)
+node[right] at(4.8,0){A}
+node[left] at(6.1,0){B}
+% (5,0) to[battery](6,0)
+  ;
+\end{circuitikz}
+\end{center}
+\setcounter{equation}{0}
+\begin{align}
+R_1, R_2 :&R_{Z1} = \frac{R_1 * R_2}{R_1 + R_2} = \frac{2kk}{3k} = 666,667\text{ }\Omega
+\\
+R_{Z1}, R_3, R_5 :&R_{Z2} = R_{Z1} + R_3 + R_5 =  666,667 + 1000 + 100 = 1766,667  \text{ }\Omega
+\\
+R_{Z2}, R_4 :&R_{Z} = \frac{R_4 * R_{Z2}}{R_4 + R_{Z2}} = \frac{176666,7}{1866,667} = 94,643\text{ }\Omega
+\end{align}
+\begin{center}
+Pomiar: $100,06 \text{ }\Omega$
+\end{center}
+
+\subsubsection{Obwód 3}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+(0,0) to (2,0)
+  (2,0) to[R, l=$R_1 \ 2k$]  (2,2)
+  (0,2) to (2,2)
+    (2,2) to (3,2)
+    (3,2) to (3,4)
+    (3,2) to[R, l=$R_3 \ 100$] (5,2)
+    (3,4) to[R, l=$R_4 \ 1k$] (5,4)
+    (5,4) to (5,2)
+    (5,2) to (6,2)
+    (6,2) to[R, l=$R_2 \ 2k$] (6,0)
+    (6,2) to (7,2)
+    (6,0) to (7,0)
+    node[above] at(0,2){A}
+    node[above] at(0,0){B}
+  ;
+\end{circuitikz}
+\end{center}
+\setcounter{equation}{0}
+\begin{align}
+&R_Z = R_1 = 2000 \text{ }\Omega
+\end{align}
+\begin{center}
+Pomiar: $1959,30 \text{ }\Omega$
+\end{center}
+
+\subsubsection{Obwód 4}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+(4,0) to (6,0)
+(4,0) to[R, l=$R_3 \ 2k$] (4,3)
+(6,0) to (6,1)
+(6,1) to (7,1)
+(6,1) to[R, l=$R_4 \ 1k$] (6,2)
+(6,2) to (7,2)
+(6,2) to(6,3)
+(4,3) to[R, l=$R_2 \ 2k$] (6,3)
+(1,3)to[R, l=$R_1 \ 1k$] (4,3)
+(1,3) to (1,4)
+(1,4) to (9,4)
+(6,3) to[R, l=$R_5 \ 100$] (9,3)
+(9,3) to (9,4)
+node[above] at(7,2){A}
+node[above] at(7,1){B}
+;
+\end{circuitikz}
+\end{center}
+
+\setcounter{equation}{0}
+\begin{align}
+R_1, R_5:& R_{Z1} = R_1 + R_5 = 1100 \text{ }\Omega
+\\
+R_{Z1}, R_2: &R_{Z2} = \frac{R_{Z1}*R_2}{R_{Z1}+R_Z} = \frac{2200000}{3100} = 709,677 \text{ }\Omega
+\\
+R_{Z2}, R_3: &R_{Z3}=R_{Z2}+R_3=2709,677\text{ }\Omega
+\\
+R_{Z3}, R_4; &R_Z=\frac{R_{Z3}*R_4}{R_{Z3}+R_4}=\frac{2709677}{3709,677}=730,434\text{ }\Omega
+\end{align}
+\begin{center}
+Pomiar: $742,68 \text{ }\Omega$
+\end{center}
+
+\subsubsection{Obwód 5}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+  (0,0) to (2,0)
+  (2,0) to[R, l=$R_1 \ 2k$]  (2,2)
+  (0,2) to (2,2)
+    (2,2) to (3,2)
+    (3,2) to (3,4)
+    (3,2) to[R, l=$R_3 \ 2k$] (5,2)
+    (3,4) to[R, l=$R_4 \ 1k$] (5,4)
+    (5,4) to (5,2)
+    (5,2) to (6,2)
+    (6,2) to[R, l=$R_2 \ 2k$] (6,0)
+    (2,0) to (6,0)
+    (6,2) to (7,2)
+    (6,0) to (7,0)
+    node[above] at(0,2){A}
+    node[above] at(0,0){B}
+  ;
+\end{circuitikz}
+\end{center}
+
+\setcounter{equation}{0}
+\begin{align}
+R_4, R_3: &R_{Z1} = \frac{R_4*R_3}{R_4+R_3} = \frac{2000000}{3000} = 666,667 \text{ }\Omega
+\\
+R_{Z1}, R_2: &R_{Z2} = R_{Z1} + R_2 = 2666,667 \text{ }\Omega
+\\
+R_{Z2}, R_1: &R_Z = \frac{R_{Z2}*R_1}{R_{Z2}+R_1} = \frac{5333334}{4666,667} = 1142,857 \text{ }\Omega
+\end{align}
+\begin{center}
+Pomiar: $1114,14 \text{ }\Omega$
+\end{center}
+
+\subsubsection{Obwód 6}
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+  (0,0) to (8,0)
+  (0,0) to (0,2)
+  (0,2) to[R, l=$R_5 \ 1k$] (2,2)
+  (2,2) to (2,1)
+  (2,1) to (4,1)
+  (4,1) to[R, l=$R_2 \ 2k$] (4,3)
+  (4,3) to[R, l=$R_4 \ 2k$] (8,3)
+  (8,3) to (8,0)
+  (2,2) to[R, l=$R_1 \ 100$] (2,4)
+  (4,3) to (4,4)
+  (2,4) to (4,4)
+  (3,4) to[R, l=$R_3 \ 1k$] (3,6)
+  (3,6) to (8,6)
+  (8,6) to (8,5.7)
+  (8,4) to (8,3)
+  node[below] at(8,5.7){A}
+  node[above] at(8,4){B}
+  ;
+  \end{circuitikz}
+\end{center}
+\setcounter{equation}{0}
+\begin{align}
+R_1, R_2: &R_{Z1} = \frac{R_1*R_2}{R_1+R_2} = \frac{200000}{2100} = 95,238 \text{ }\Omega
+\\
+R_{Z1}, R_5: &R_{Z2} = R_{Z1} + R_5 = 1095,238 \text{ }\Omega
+\\
+R_{Z2}, R_4: &R_{Z3} = \frac{R_{Z2}*R_4}{R_{Z2}+R_4} = \frac{2190476}{3095,238} = 707,692 \text{ }\Omega
+\\
+R_{Z3}, R_3: &R_Z = R_{Z3} + R_3 = 1707,692 \text{ }\Omega
+\end{align}
+\begin{center}
+Pomiar: $1673,81 \text{ }\Omega$
+\end{center}
+\subsubsection{Wnioski}
+Błąd pomiarowy
+
+
+\end{document}
